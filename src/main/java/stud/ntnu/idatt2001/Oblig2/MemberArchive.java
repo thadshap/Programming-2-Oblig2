@@ -33,7 +33,10 @@ public class MemberArchive {
      */
     public boolean addMember(BonusMember bonusMember) {
         boolean success = false;
-        //TODO: Fill in your solution
+        if(!members.containsValue(bonusMember)){
+            members.put(bonusMember.getMemberNumber(),bonusMember);
+            success = true;
+        }
         return success;
     }
 
@@ -49,7 +52,7 @@ public class MemberArchive {
      */
     public boolean registerPoints(int memberNumber, int bonusPoints) {
         boolean success = false;
-        //TODO: Fill in your solution
+        if (members.)
         return success;
     }
 
