@@ -2,6 +2,8 @@ package stud.ntnu.idatt2001.Oblig2;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * The member archive holds all the bonus members. The archive provides
@@ -52,7 +54,13 @@ public class MemberArchive {
      */
     public boolean registerPoints(int memberNumber, int bonusPoints) {
         boolean success = false;
-        if (members.)
+        BonusMember member = members.get(memberNumber);
+        if (member == null){
+            return success;
+        }
+        member.registerBonusPoints(bonusPoints);
+        success = true;
+
         return success;
     }
 
@@ -60,7 +68,9 @@ public class MemberArchive {
      * Lists all members to the console.
      */
     public void listAllMembers() {
-        //TODO: Fill in your solution
+        for (Map.Entry<Integer,BonusMember> entry : members.entrySet()){
+            System.out.printf(members.toString());
+        }
     }
 
 

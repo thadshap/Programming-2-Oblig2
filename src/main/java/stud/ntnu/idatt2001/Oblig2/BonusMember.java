@@ -76,4 +76,13 @@ public class BonusMember {
     public String getMembershipLevel(){
         return membership.getMembershipName();
     }
+
+    @Override
+    public String toString() {
+        return  "memberNumber=" + memberNumber +
+                ", enrolledDate=" + enrolledDate +
+                ", bonusPointsBalance=" + bonusPointsBalance +
+                ", name='" + name +
+                ", eMailAddress='" + eMailAddress;
+    }
 }
