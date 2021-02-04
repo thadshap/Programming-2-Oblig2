@@ -4,20 +4,40 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.junit-jupiter</groupId>
-    <artifactId>junit-jupiter</artifactId>
-    <version>5.7.0</version>
+    <groupId>stud.ntnu.idatt2001.Oblig2</groupId>
+    <artifactId>Oblig2</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.junit-jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.7.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>stud.ntnu.idatt2001.Oblig2.MemberArchiveClient</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
 

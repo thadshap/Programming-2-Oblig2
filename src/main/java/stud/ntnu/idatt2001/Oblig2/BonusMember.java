@@ -14,8 +14,6 @@ public class BonusMember {
     private static final int SILVER_LIMIT = 25000;
     private static final int GOLD_LIMIT = 75000;
 
-    String formattedDate = enrolledDate.format(DateTimeFormatter.ofPattern("dd-MMM-yy"));
-
     public BonusMember(int memberNumber, LocalDate enrolledDate, int bonusPointsBalance, String name, String eMailAddress) {
         this.memberNumber = memberNumber;
         this.enrolledDate = enrolledDate;
@@ -80,8 +78,9 @@ public class BonusMember {
     @Override
     public String toString() {
         return  "memberNumber=" + memberNumber +
-                ", enrolledDate=" + enrolledDate +
+                ", enrolledDate=" + enrolledDate.format(DateTimeFormatter.ofPattern("dd-MMM-yy"))+
                 ", bonusPointsBalance=" + bonusPointsBalance +
+                ", membershiplevel=" +getMembershipLevel()+
                 ", name='" + name +
                 ", eMailAddress='" + eMailAddress;
     }
