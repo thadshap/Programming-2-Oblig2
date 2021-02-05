@@ -63,11 +63,17 @@ public class BonusMember {
 
     private void checkAndSetMembership() {
         if (bonusPointsBalance >= GOLD_LIMIT) {
-            membership = new GoldMembership();
+            if (!(this.membership instanceof GoldMembership)) {
+                membership = new GoldMembership();
+            }
         } else if (bonusPointsBalance >= SILVER_LIMIT) {
-            membership = new SilverMembership();
+            if (!(this.membership instanceof SilverMembership)) {
+                membership = new SilverMembership();
+            }
         } else {
-            membership = new BasicMembership();
+            if (!(this.membership instanceof BasicMembership)) {
+                membership = new BasicMembership();
+            }
         }
     }
 
