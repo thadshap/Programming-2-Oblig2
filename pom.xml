@@ -19,11 +19,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.junit-jupiter</groupId>
-                <artifactId>junit-jupiter</artifactId>
-                <version>5.7.0</version>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
@@ -39,6 +34,14 @@
         </plugins>
 
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>

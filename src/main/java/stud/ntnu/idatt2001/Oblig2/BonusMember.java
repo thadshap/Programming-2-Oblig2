@@ -27,7 +27,7 @@ public class BonusMember {
         if (memberNumber<=0) {
             throw new IllegalArgumentException("You cant't write a negative memberNumber and you have to set a membernumber");
         }
-        this.membership = membership;
+        this.memberNumber = memberNumber;
     }
 
     private void setEnrolledDate(LocalDate enrolledDate){
@@ -75,7 +75,7 @@ public class BonusMember {
     }
 
     public void registerBonusPoints(int newPoints){
-        int bonusPointsBalance = membership.registerPoints(this.bonusPointsBalance,newPoints);
+        this.bonusPointsBalance = membership.registerPoints(this.bonusPointsBalance,newPoints);
         checkAndSetMembership();
     }
 
@@ -108,4 +108,6 @@ public class BonusMember {
                 ", name='" + name +
                 ", eMailAddress='" + eMailAddress;
     }
+
+
 }
