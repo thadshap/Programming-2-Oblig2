@@ -73,6 +73,11 @@ public class MemberArchive {
         }
     }
 
+    public int FindPoints(int memberNumber, String password){
+        
+          return 0;
+    }
+
 
     /**
      * Fills the register with some arbitrary members, for testing purposes.

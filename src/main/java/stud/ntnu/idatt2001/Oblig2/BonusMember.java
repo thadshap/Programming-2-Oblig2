@@ -15,13 +15,35 @@ public class BonusMember {
     private static final int GOLD_LIMIT = 75000;
 
     public BonusMember(int memberNumber, LocalDate enrolledDate, int bonusPointsBalance, String name, String eMailAddress) {
-        this.memberNumber = memberNumber;
-        this.enrolledDate = enrolledDate;
-        this.bonusPointsBalance = bonusPointsBalance;
-        this.name = name;
-        this.eMailAddress = eMailAddress;
-        membership = new BasicMembership();
+        setMemberNumber(memberNumber);
+        setEnrolledDate(enrolledDate);
+        setBonusPointsBalance(bonusPointsBalance);
+        setName(name);
+        setEMailAddress(eMailAddress);
         checkAndSetMembership();
+    }
+
+    private void setMemberNumber(int memberNumber){
+        if (memberNumber<=0) {
+            throw new IllegalArgumentException("You cant't write a negative memberNumber and you have to set a membernumber");
+        }
+        this.membership = membership;
+    }
+
+    private void setEnrolledDate(LocalDate enrolledDate){
+        this.enrolledDate=enrolledDate;
+    }
+
+    private void setBonusPointsBalance(int bonusPointsBalance){
+        this.bonusPointsBalance=bonusPointsBalance;
+    }
+
+    private void setName(String name){
+        this.name = name;
+    }
+
+    private void setEMailAddress(String eMailAddress){
+        this.eMailAddress=eMailAddress;
     }
 
     public int getMemberNumber() {
@@ -42,10 +64,6 @@ public class BonusMember {
 
     public String getEMailAddress() {
         return eMailAddress;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public Membership getMembership() {
