@@ -9,4 +9,11 @@ public class BasicMembership extends Membership{
     public String getMembershipName() {
         return "Basic";
     }
+
+    @Override
+    public String toString(){
+    return getMembershipName();
+    }
+
 }
+

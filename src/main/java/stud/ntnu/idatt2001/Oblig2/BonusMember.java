@@ -14,12 +14,13 @@ public class BonusMember {
     private static final int SILVER_LIMIT = 25000;
     private static final int GOLD_LIMIT = 75000;
 
-    public BonusMember(int memberNumber, LocalDate enrolledDate, int bonusPointsBalance, String name, String eMailAddress) {
+    public BonusMember(int memberNumber, LocalDate enrolledDate, int bonusPointsBalance, String name, String eMailAddress, String password) {
         setMemberNumber(memberNumber);
         setEnrolledDate(enrolledDate);
         setBonusPointsBalance(bonusPointsBalance);
         setName(name);
         setEMailAddress(eMailAddress);
+        setPassword(password);
         checkAndSetMembership();
     }
 
@@ -45,6 +46,8 @@ public class BonusMember {
     private void setEMailAddress(String eMailAddress){
         this.eMailAddress=eMailAddress;
     }
+
+    private void setPassword (String password) {this.password=password;}
 
     public int getMemberNumber() {
         return memberNumber;
@@ -104,7 +107,7 @@ public class BonusMember {
         return  "memberNumber=" + memberNumber +
                 ", enrolledDate=" + enrolledDate.format(DateTimeFormatter.ofPattern("dd-MMM-yy"))+
                 ", bonusPointsBalance=" + bonusPointsBalance +
-                ", membershiplevel=" +getMembershipLevel()+
+                ", membershiplevel=" +getMembership()+
                 ", name='" + name +
                 ", eMailAddress='" + eMailAddress;
     }

@@ -19,4 +19,9 @@ public class GoldMembership extends Membership{
         return "Gold";
     }
 
+    @Override
+    public String toString(){
+        return getMembershipName();
+    }
+
 }

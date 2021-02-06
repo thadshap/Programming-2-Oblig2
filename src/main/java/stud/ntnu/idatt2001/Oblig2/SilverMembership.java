@@ -11,4 +11,9 @@ public class SilverMembership extends Membership{
     public String getMembershipName(){
         return "Silver";
     }
+
+    @Override
+    public String toString(){
+        return getMembershipName();
+    }
 }
