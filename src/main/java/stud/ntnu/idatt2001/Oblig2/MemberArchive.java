@@ -2,7 +2,6 @@ package stud.ntnu.idatt2001.Oblig2;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -10,7 +9,8 @@ import java.util.Map;
  * functionality for adding members to the register, looking up bonuspoints
  * of given members, registering new bonuspoints and listing all the members.
  *
- * @author arne
+ * @version 11.02.2021
+ * @author Thadshajini
  */
 public class MemberArchive {
 
@@ -73,9 +73,26 @@ public class MemberArchive {
         }
     }
 
+    /**
+     * Find points to a member with the member number given by the parameter {@code memberNumber}
+     * and password given by the parameter @code password}. If no member in the register
+     * matches the provided member number or password, {@code false} is returned.
+     * @param memberNumber member number to identify the spesific member's points you want to find
+     * @param password password checks if it is the member with that membernumber who wants to find their points
+     * @return points of the member with the entered membernumber or if the membernumber does not exist or the password is wrong returnes -1
+     */
     public int FindPoints(int memberNumber, String password){
-        
-          return 0;
+        if (members.containsKey(memberNumber)){
+            if (members.get(memberNumber).checkPassword(password) == true){
+                return members.get(memberNumber).getBonusPointsBalance();
+            }
+            else {
+                return -1;
+            }
+        }
+        else {
+            return -1;
+        }
     }
 
 

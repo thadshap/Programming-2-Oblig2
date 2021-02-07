@@ -36,18 +36,33 @@ public class BonusMember {
     }
 
     private void setBonusPointsBalance(int bonusPointsBalance){
+        if (bonusPointsBalance == 0){
+            throw new IllegalArgumentException("You have to register bonuspoints.");
+        }
         this.bonusPointsBalance=bonusPointsBalance;
     }
 
     private void setName(String name){
+        if (name == null || name == ""){
+            throw new IllegalArgumentException("You have to write the name of the member.");
+        }
         this.name = name;
     }
 
     private void setEMailAddress(String eMailAddress){
+        if (eMailAddress == null || eMailAddress == ""){
+            throw new IllegalArgumentException("You have to write the member's emailaddress.");
+        }
         this.eMailAddress=eMailAddress;
     }
 
-    private void setPassword (String password) {this.password=password;}
+    private void setPassword (String password) {
+        if (password == null || password == ""){
+            throw new IllegalArgumentException("You have to write a password for your own safety precautions.");
+        }
+        this.password=password;
+    }
+
 
     public int getMemberNumber() {
         return memberNumber;

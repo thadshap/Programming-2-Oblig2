@@ -26,6 +26,7 @@ public class MemberArchiveClient {
 
             System.out.println("Now lets see the register:\n");
             memberArchive.listAllMembers();
+
         } catch (Exception e){
             e.getMessage();
         }
