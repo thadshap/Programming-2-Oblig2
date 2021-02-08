@@ -18,8 +18,12 @@ public class SilverMembership extends Membership{
      */
     @Override
     public int registerPoints(int bonusPointBalance,int newPoints){
-        int silverBounus = (int) Math.round(POINTS_SCALING_FACTOR);
-        return bonusPointBalance+(newPoints*silverBounus);
+        if (newPoints>0) {
+            return bonusPointBalance + (int) Math.round((newPoints * POINTS_SCALING_FACTOR));
+        }
+        else {
+            return bonusPointBalance + newPoints;
+        }
     }
 
     /**

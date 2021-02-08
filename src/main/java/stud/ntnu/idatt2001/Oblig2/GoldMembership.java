@@ -21,13 +21,14 @@ public class GoldMembership extends Membership{
      */
     @Override
     public int registerPoints(int bonusPointBalance, int newPoints) {
-        if(bonusPointBalance<90000){
-            int silverBounus1 = (int) Math.round(POINTS_SCALING_FACTOR_LEVEL_1);
-            return bonusPointBalance+(newPoints*silverBounus1);
+        if(bonusPointBalance<90000 && newPoints>0){
+            return bonusPointBalance + (int) Math.round(newPoints*POINTS_SCALING_FACTOR_LEVEL_1);
         }
-        else{
-            int silverBounus2 = (int) Math.round(POINTS_SCALING_FACTOR_LEVEL_2);
-            return bonusPointBalance + (newPoints * silverBounus2);
+        else if(bonusPointBalance>90000 && newPoints>0){
+            return bonusPointBalance + (int) Math.round(newPoints*POINTS_SCALING_FACTOR_LEVEL_2);
+        }
+        else {
+            return bonusPointBalance + newPoints;
         }
     }
 
