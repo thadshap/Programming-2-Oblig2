@@ -11,11 +11,12 @@ public class SilverMembership extends Membership{
     private final float POINTS_SCALING_FACTOR = 1.2f;
 
     /**
-     * register points to a member with bounus points balance and new points by the parameter {@code bonusPointBalance} and {@code newPoints}
-     * @param bonusPointBalance the the balance the member has allready
-     * @param newPoints is the new points the member has earned and is going to be POINTS_SCALING_FACTOR and added to the bounus point balance
+     * register points to a member with bonus points balance and new points by the parameter {@code bonusPointBalance} and {@code newPoints}
+     * @param bonusPointBalance the the balance the member has already
+     * @param newPoints is the new points the member has earned and is going to be POINTS_SCALING_FACTOR and added to the bonus point balance
      * @return bonus point balance added with the new points POINTS_SCALING_FACTOR.
      */
+    @Override
     public int registerPoints(int bonusPointBalance,int newPoints){
         int silverBounus = (int) Math.round(POINTS_SCALING_FACTOR);
         return bonusPointBalance+(newPoints*silverBounus);
@@ -24,6 +25,7 @@ public class SilverMembership extends Membership{
     /**
      * @return "Silver" if your bonus point balance is greater than 25 000 and lower than 75 000.
      */
+    @Override
     public String getMembershipName(){
         return "Silver";
     }

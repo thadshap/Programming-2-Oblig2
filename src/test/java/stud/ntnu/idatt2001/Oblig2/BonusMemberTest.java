@@ -1,5 +1,6 @@
 package stud.ntnu.idatt2001.Oblig2;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -42,14 +43,20 @@ class BonusMemberTest {
     }
 
     @Test
-    void registerBonusPoints() {
+    @DisplayName("register bonus points with positive points")
+    void registerPointsPositive() {
         BonusMember member = new BonusMember(1, LocalDate.now(), 10000, "Olsen, Ole", "ole@olsen.biz", "abcdef123");
         member.registerBonusPoints(10000);
         assertEquals(20000,member.getBonusPointsBalance());
-        member = new BonusMember(2, LocalDate.now(), 15000, "Jensen, Jens", "jens@jensen.biz","abcdef234");
+    }
+
+    @Test
+    @DisplayName("register bonus points with negative points")
+    void registerPointsNegative() {
+        BonusMember member = new BonusMember(2, LocalDate.now(), 15000, "Jensen, Jens", "jens@jensen.biz", "abcdef234");
         member.registerBonusPoints(-10000);
-        assertEquals(5000,member.getBonusPointsBalance());
-        assertNotEquals(15000,member.getBonusPointsBalance());
+        assertEquals(5000, member.getBonusPointsBalance());
+        assertNotEquals(15000, member.getBonusPointsBalance());
     }
 
     @Test
