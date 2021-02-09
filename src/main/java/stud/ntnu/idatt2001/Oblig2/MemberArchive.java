@@ -69,7 +69,7 @@ public class MemberArchive {
      */
     public void listAllMembers() {
         for (Map.Entry<Integer,BonusMember> entry : members.entrySet()){
-            System.out.printf(entry.getValue()+"\n");
+            System.out.print(entry.getValue()+"\n");
         }
     }
 
